@@ -14,23 +14,29 @@ AI coding assistants have stale knowledge about npm packages. This MCP server gi
 
 ## Install
 
-### Docker
+### npx (easiest)
 
 ```bash
-docker run -i ghcr.io/zcag/npm-search-mcp:1.0.0
+npx -y github:zcag/npm-search-mcp
 ```
 
-### Claude Code
+### Claude Code config
 
 ```json
 {
   "mcpServers": {
     "npm-search": {
-      "command": "docker",
-      "args": ["run", "-i", "--rm", "ghcr.io/zcag/npm-search-mcp:1.0.0"]
+      "command": "npx",
+      "args": ["-y", "github:zcag/npm-search-mcp"]
     }
   }
 }
+```
+
+### Docker
+
+```bash
+docker run -i ghcr.io/zcag/npm-search-mcp:1.0.0
 ```
 
 ### From source
